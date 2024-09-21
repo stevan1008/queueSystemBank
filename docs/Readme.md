@@ -24,6 +24,7 @@ Este proyecto es una simulación de un sistema de atención bancaria que utiliza
 ## Arquitectura
 
 El proyecto sigue los principios de **Clean Architecture** y **SOLID**, lo que asegura que sea fácil de mantener y extender. La estructura de carpetas es la siguiente:
+```
 .
 ├── cmd                     # Punto de entrada de la aplicación
 │   └── http
@@ -41,6 +42,7 @@ El proyecto sigue los principios de **Clean Architecture** y **SOLID**, lo que a
 ├── docker-compose.yml       # Configuración de Docker Compose
 ├── go.mod                  # Dependencias del proyecto
 └── go.sum                  # Hashes de dependencias
+```
 
 Enlace de referencia sobre arquitectura hexagonal: [Building RESTful API with Hexagonal Architecture in Go](https://dev.to/bagashiz/building-restful-api-with-hexagonal-architecture-in-go-1mij)
 
@@ -78,6 +80,9 @@ Enlace de referencia sobre arquitectura hexagonal: [Building RESTful API with He
    ```
   
 La aplicación estará disponible en http://localhost:8084 (Si se prefiere modificar el puerto ir al DockerCompose)
+
+
+
 
 
 Endpoints
