@@ -70,13 +70,16 @@ Enlace de referencia sobre arquitectura hexagonal: [Building RESTful API with He
    go build -o bank-queue-system ./cmd/http
    ```
 
-   ```bash
-   go build -o bank-queue-system ./cmd/http
-
 2. **Ejecutar la aplicación**:
 
    ```bash
    ./bank-queue-system
+   ```
+
+   O directamente
+
+   ```bash
+   go run ./cmd/http
    ```
   
 La aplicación estará disponible en http://localhost:8084 (Si se prefiere modificar el puerto ir al main)
