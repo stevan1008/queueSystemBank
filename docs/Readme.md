@@ -119,80 +119,86 @@ Agrega un cliente a la cola. Los clientes son ordenados por **prioridad** y, si 
   ```json
   {
     "ID": "1",
-    "Name": "Carlos Pérez",
+    "Name": "Marlon Muete",
     "Priority": 1
   }
   ```
 - **Respuesta exitosa:**
   `Código: 201 Created`
-- **Cuerpo:**
-  `Cliente Carlos Pérez (Normal) añadido a la cola`
+- **Cuerpo de respuesta:**
+  `Cliente Marlon Muete (Normal) añadido a la cola`
 
   
 ### POST /clients/next
+
 Procesa al siguiente cliente en la cola basado en la prioridad. Si dos clientes tienen la misma prioridad, se respeta el orden de llegada.
 
-URL: /clients/next
-Método HTTP: POST
-Descripción: Retira al cliente con mayor prioridad de la cola y lo atiende.
-Respuesta exitosa:
-Código: 200 OK
-Cuerpo:
-plaintext
-Copy code
-Cliente Carlos Pérez (Normal) ha sido atendido (esperó 2m10s)
-GET /queue
-Obtiene el estado actual de la cola. Muestra los clientes pendientes en el orden en que serán atendidos.
-
-URL: /queue
-Método HTTP: GET
-Descripción: Devuelve la lista de clientes que están actualmente en la cola, ordenados por prioridad y llegada.
-Respuesta exitosa:
-Código: 200 OK
-Cuerpo:
-json
-Copy code
-[
-  {
-    "ID": "1",
-    "Name": "Carlos Pérez",
-    "Priority": 1,
-    "ArrivalTime": "2024-09-20T09:55:00Z"
-  },
-  {
-    "ID": "2",
-    "Name": "Ana López",
-    "Priority": 0,
-    "ArrivalTime": "2024-09-20T09:50:00Z"
-  }
-]
-GET /history
-Obtiene el historial de clientes que ya han sido atendidos. Este endpoint muestra la lista de clientes que ya pasaron por la cola y fueron procesados.
-
-URL: /history
-Método HTTP: GET
-Descripción: Devuelve un historial en formato JSON de los clientes que ya han sido atendidos.
-Respuesta exitosa:
-Código: 200 OK
-Cuerpo:
-json
-Copy code
-[
-  {
-    "ID": "1",
-    "Name": "Carlos Pérez",
-    "Priority": 2,
-    "ArrivalTime": "2024-09-20T09:55:00Z",
-    "WaitTime": "2m10s"
-  }
-]
+- **URL:** `/clients/next`
+- **Método HTTP:** `POST`
+- **Descripción:** `Retira al cliente con mayor prioridad de la cola y lo atiende.`
+- **Respuesta exitosa:**
+  `Código: 200 OK`
+- **Cuerpo de respuesta:**
+  `Cliente Marlon Muete (Normal) ha sido atendido (esperó 2m10s)`
 
 
-Pruebas
+### GET /queue
 
-El proyecto incluye pruebas unitarias e integradas utilizando Testify. Para ejecutar las pruebas, usa el siguiente comando:
+Obtiene el estado actual de la cola. Muestra los clientes pendientes en el orden en que serán atendidos que hay en la cola.
 
-bash
-Copy code
-go test ./...
-Esto ejecutará todas las pruebas del proyecto y te dará un resumen de los resultados.
+- **URL:** `/queue`
+- **Método HTTP:** `GET`
+- **Descripción:** `Devuelve la lista de clientes que están actualmente en la cola, ordenados por prioridad y llegada.`
+- **Respuesta exitosa:**
+  `Código: 200 OK`
+- **Cuerpo:**
+  ```json
+  [
+    {
+      "ID": "1",
+      "Name": "Marlon Muete",
+      "Priority": 1,
+      "ArrivalTime": "2024-09-20T09:55:00Z"
+    },
+    {
+      "ID": "2",
+      "Name": "Jerson Monterroso",
+      "Priority": 0,
+      "ArrivalTime": "2024-09-20T09:50:00Z"
+    }
+  ]
+  ```
+
+
+### GET /history
+
+Muestra el historial de clientes que ya han sido atendidos. Este endpoint obtiene la lista de clientes que ya pasaron por la cola y fueron procesados. OJO, aquí el cliente ya fue atendido y no está en la cola.
+
+- **URL:** `/history`
+- **Método HTTP:** `GET`
+- **Descripción:** `Devuelve un historial en formato JSON de los clientes que ya han sido atendidos.`
+- **Respuesta exitosa:**
+  `Código: 200 OK`
+- **Cuerpo:**
+  ```json
+  [
+    {
+      "ID": "1",
+      "Name": "Marlon Muete",
+      "Priority": 2,
+      "ArrivalTime": "2024-09-20T09:55:00Z",
+      "WaitTime": "2m10s"
+    }
+  ]
+  ```
+
+
+## Pruebas
+
+El proyecto incluye pruebas unitarias e integradas utilizando Testify default de Go. Para ejecutar las pruebas, usar el siguiente comando:
+
+  ```bash
+  go test ./...
+  ```
+
+Esto ejecutará todas las pruebas que hay en el proyecto.
