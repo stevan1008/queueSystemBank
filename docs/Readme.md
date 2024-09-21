@@ -124,9 +124,9 @@ Agrega un cliente a la cola. Los clientes son ordenados por **prioridad** y, si 
   }
   ```
 - **Respuesta exitosa:**
-  - Código: 201 Created
+  `Código: 201 Created`
 - **Cuerpo:**
-  - Cliente Carlos Pérez (Normal) añadido a la cola
+  `Cliente Carlos Pérez (Normal) añadido a la cola`
 
   
 ### POST /clients/next
