@@ -66,6 +66,7 @@ Enlace de referencia sobre arquitectura hexagonal: [Building RESTful API with He
 
    ```bash
    go build -o bank-queue-system ./cmd/http
+   ```
 
    ```bash
    go build -o bank-queue-system ./cmd/http
