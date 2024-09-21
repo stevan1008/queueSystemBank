@@ -79,7 +79,7 @@ Enlace de referencia sobre arquitectura hexagonal: [Building RESTful API with He
    ./bank-queue-system
    ```
   
-La aplicación estará disponible en http://localhost:8084 (Si se prefiere modificar el puerto ir al DockerCompose)
+La aplicación estará disponible en http://localhost:8084 (Si se prefiere modificar el puerto ir al main)
 
 ---
 
@@ -91,7 +91,7 @@ La aplicación estará disponible en http://localhost:8084 (Si se prefiere modif
    ```
 2. **Ejecutar la imagen de Docker:**
    ```bash
-   docker run -p 8080:8080 bank-queue-system
+   docker run -p 8084:8084 bank-queue-system
    ```
 
 ## Usar Docker Compose
