@@ -75,6 +75,7 @@ Enlace de referencia sobre arquitectura hexagonal: [Building RESTful API with He
 
   ```bash
   ./bank-queue-system
+  ```
   
 La aplicación estará disponible en http://localhost:8084 (Si se prefiere modificar el puerto ir al DockerCompose)
 
